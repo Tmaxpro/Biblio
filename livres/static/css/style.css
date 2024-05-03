@@ -1,0 +1,279 @@
+@import "reset.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    background: mintcream;
+    display: flex;
+    justify-content: center;
+}
+
+* {
+    font-family: roboto, sans-serif;
+}
+
+.master {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    width: 50%;
+    padding-top: 1.5rem;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav > a {
+    text-decoration: none;
+    color: teal;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/*under nav*/
+.under-nav {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+button {
+  outline: none;
+    width: 130px;
+  height: fit-content;
+  padding: 10px 15px;
+  border: 2px solid #000000;
+    border-radius: 1rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+    overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+   background: #000;
+  color: #fff;
+}
+
+.btn:before {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    top: -180px;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    background-color: #fff;
+    animation: shiny-btn1 3s ease-in-out infinite;
+}
+.btn:active{
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2),
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+}
+
+.btn-add {
+    border-color: teal;
+    font-weight: 550;
+}
+
+.btn-add:hover {
+    background-color: teal;
+    color: #fff;
+}
+
+.btn-normal {
+    border-color: lightblue;
+    font-weight: 550;
+}
+
+.btn-normal:hover {
+    background: lightblue;
+    color: #fff;
+}
+
+.btn-danger {
+    border-color: #dc3545;
+    font-weight: 550;
+}
+
+.btn-danger:hover {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+
+.inlinelist {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none; /* Removes default list markers */
+  padding: 0;
+  margin: 0;
+}
+
+.inlinelist li {
+  margin-right: 0.3rem; /* Spacing between list items */
+}
+
+.categorie {
+    box-sizing: border-box;
+    border: 1px dashed #000000;
+    padding: 0.25rem;
+    border-radius: 100px;
+}
+
+.categories {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    margin-bottom: 2rem;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.side-action {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+.page-title {
+    font-weight: 800;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    align-self: start;
+}
+
+.title {
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+.title-d {
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.author {
+    font-style: italic;
+    font-weight: 600;
+}
+
+.author-d {
+    font-style: italic;
+    font-weight: 700;
+}
+
+.card-categorie {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    grid-auto-flow: row;
+    margin-top: 1.5rem;
+}
+
+.categorie-button {
+    box-sizing: border-box;
+    border: 3px solid #000000;
+    font-weight: bold;
+    padding: 1rem;
+    color: black;
+    border-radius: 2rem;
+}
+
+.livre-detail {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.description-title {
+    font-weight: 800;
+    font-size: 1.25rem;
+}
+
+.main-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+label {
+    display: block;
+    text-align: left;
+    font-weight: 600;
+}
+
+input, textarea{
+    align-self: center;
+    display: block;
+    width: 60%;
+    height: 3rem;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    border-color: teal;
+    transition: 180ms box-shadow ease-in-out;
+}
+
+textarea {
+    height: 7rem;
+}
+
+select {
+  width: 200px;
+  height: 100px;
+  border: 1px solid #ccc;
+  overflow-y: auto;
+}
+
+select option:checked {
+  background: lightgreen;
+}
+
+
+input:focus {
+    outline: 3px solid transparent;
+}
+

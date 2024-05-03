@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Categories</title>
+{% endblock %}
+
+{% block content %}
+    <div class="under-nav">
+        <a href="{% url 'livres:create_categories' %}"><button class="btn btn-add">Ajouter une categorie</button></a>
+    </div>
+    <span class="page-title">Catégories</span>
+    <div>
+        <div class="card-categorie">
+            {% for category in categories %}
+            <a href="{% url 'livres:livres_par_categories' nom_categorie=category.nom %}">
+                <span class="categorie-button">
+                    {{ category.nom }}
+                </span>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

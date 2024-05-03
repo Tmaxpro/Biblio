@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Ajouter un livre</title>
+{% endblock %}
+
+{% block content %}
+    <div class="main-form">
+        <h1 class="page-title">Modifier un un livre</h1>
+        <form method="POST" class="form">
+        {% csrf_token %}
+        {{ form.as_p }}
+            <button type="submit" class="btn btn-add">Modifier</button>
+        </form>
+    </div>
+{% endblock %}

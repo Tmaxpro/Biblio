@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>{{ livre.title }}</title>
+{% endblock %}
+
+{% block content %}
+    <div class="main">
+        <div class="livre-detail">
+            <span class="title title-d">{{ livre.title.title }}</span>
+                    <p>Écrit par <span class="author author-d">{{ livre.author.title }}</span></p>
+                    <div class="categories">
+                        <p>
+                            Categorie : 
+                            <ul class="inlinelist">
+                                {% for category in livre.categories.all %}
+                                    <li class="categorie cate-d">{{ category.nom }}</li>
+                                {% endfor %}
+                            </ul>
+                        </p>
+                    </div>
+            <b class="description-title">Description</b>
+            <p class="description">
+                {{ livre.description|linebreaks|safe }}
+            </p>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}
+    {% if 'category[0].lower' in 'aeihouy' %}
+        <title>Livres d'{{ category }}</title>
+    {% else %}
+        <title>Livres de {{ category }}</title>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <div class="main">
+        <div class="under-nav add">
+            <a href="{% url 'livres:create_livre' %}"><button class="btn btn-normal">Ajouter un livre</button></a>
+        </div>
+        <h1  class="page-title">
+            {% if category|slice:":1"|lower in ' AEIHOUY' %}
+                Livres d'{{ category }}
+            {% else %}
+                Livres de {{ category }}
+            {% endif %}
+        </h1>
+        <div>
+        {% for livre in livres %}
+            <div class="card">
+                <div class="main">
+                    <span class="title">{{ livre.title.capitalize }}</span>
+                    <p>Écrit par <span class="author">{{ livre.author.title }}</span></p>
+                    <div class="categories">
+                        <p>
+                            Categorie : 
+                            <ul class="inlinelist">
+                                {% for category in livre.categories.all %}
+                                    <li class="categorie">{{ category.nom }}</li>
+                                {% endfor %}
+                            </ul>
+                        </p>
+                    </div>
+                    <p>{{ livre.description|safe|truncatewords:40 }}</p>
+                </div>
+                <div class="side-action">
+                    <form action="{% url 'livres:detail_livre' slug=livre.slug %}">
+                        <button class="btn btn-normal">Voir Plus</button>
+                    </form>
+                    <a href="{% url 'livres:update_livre' slug=livre.slug %}">
+                        <button class="btn btn-normal">Modifier</button>
+                    </a>
+                    <a href="{% url 'livres:delete_livre' slug=livre.slug %}">
+                        <button class="btn btn-danger">Supprimer</button>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}
